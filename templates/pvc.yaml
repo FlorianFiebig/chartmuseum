@@ -3,6 +3,7 @@ apiVersion: v1
 metadata:
   name: mypvc1
 spec:
+  storageClassName: ssd
   accessModes:
     - ReadWriteOnce
   resources:
