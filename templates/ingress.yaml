@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: chartmuseum-ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: example.org
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: {{ include "common.fullname" . }}
+          servicePort: 8080
