@@ -14,8 +14,9 @@ spec:
         release: {{ .Release.Name | quote }}
     spec:
       volumes:
-      - name: storage-volume
-        emptyDir: {}
+      - name: storagevolume
+        persistentVolumeClaim:
+          claimName: mypvc1
       containers:
       - name: {{ .Chart.Name }}
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
@@ -37,6 +38,6 @@ spec:
             port: {{ .Values.service.internalPort }}
         volumeMounts:
         - mountPath: /storage
-          name: storage-volume
+          name: storagevolume
         resources:
 {{ toYaml .Values.resources | indent 10 }}

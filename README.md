@@ -1,5 +1,5 @@
-# ChartMuseum Helm Chart
+# Modified chartmuseum helm chart
 
-Work in progress...
+Added PersistentVolumeClaim and ingress
 
 Please see https://github.com/chartmuseum/chartmuseum

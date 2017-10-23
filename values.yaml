@@ -7,6 +7,9 @@ service:
   type: ClusterIP
   externalPort: 8080
   internalPort: 8080
+ingress:
+  enabled: true
+  hostname: exmaple.org
 resources:
   limits:
     cpu: 100m
@@ -14,3 +17,4 @@ resources:
   requests:
     cpu: 80m
     memory: 64Mi
+    
